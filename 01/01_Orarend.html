@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Órarend</title>
+    <style>
+        * {
+            background-color: rgb(176, 196, 222);
+            color: white;
+        }
+
+        .a {
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            text-align: center;
+        }
+
+        td {
+            background-color: white;
+        }
+
+        table {
+            margin: 0 auto;
+            border: 10px;
+            background-color: rgb(25, 27, 115);
+            font-size: 1.5rem;
+        }
+
+        th,
+        .ora {
+            background-color: rgb(91, 97, 158);
+            padding: 10px;
+        }
+
+        .ikt {
+            background-color: rgb(102, 175, 199);
+        }
+
+        .web {
+            background-color: rgb(11, 11, 194);
+        }
+
+        .dik {
+            background-color: rgb(71, 51, 51);
+        }
+
+        .pra {
+            background-color: rgb(16, 78, 114);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a"> <a href="https://www.soterline.hu/) " target="_blank">Órarend</a>
+    </div>
+    <br>
+    <div class="b">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Hétfő</th>
+                    <th>Kedd</th>
+                    <th>Szerda</th>
+                    <th>Csütörtök</th>
+                    <th>Péntek</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ora">1.óra</td>
+                    <td rowspan="3" class="ikt">IKT</td>
+                    <td rowspan="3" class="web">WEB</td>
+                    <td rowspan="2" class="dik">DIK</td>
+                    <td rowspan="2"></td>
+                    <td rowspan="2" class="pra">PRA</td>
+                </tr>
+
+                <tr>
+                    <td class="ora">2.óra</td>
+                </tr>
+                <tr>
+                    <td class="ora">3.óra</td>
+                    <td rowspan="2"></td>
+                    <td rowspan="2" class="pra">PRA</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="ora">4.óra</td>
+                    <td></td>
+                    <td></td>
+                    <td rowspan="2" class="web">WEB</td>
+                </tr>
+                <tr>
+                    <td class="ora">5.óra</td>
+                    <td class="ikt">IKT</td>
+                    <td class="pra">PRA</td>
+                    <td class="web">WEB</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    margin: 0 auto;
+    text-align: center;
+    max-width: 600px;
+    /*max-height: 1200px;*/
+}
+
+#card-holder{
+    display: flex;
+    justify-content: space-between;
+    
+    
+
+}
+
+.card{
+    width: 180px;
+    height: 250px;
+    box-shadow: 5px 10px 8px rgb(112, 109, 109);
+    background-color: rgb(191, 221, 184);
+    margin-bottom: 10px;
+}
+
+.pic{
+    position: relative;
+    width: 160px;
+    top:10px;
+}
+
+.text{
+    position: relative;
+    bottom: -15px;
+}
+
+.newsletter{
+    border: 1px solid rgb(182, 180, 180);
+    padding: 10px;
+    position: relative;
+    top:10px;
+    text-align: left;
+    border-radius: 5px;
+    /*display: block;*/
+}
+
+#hirlevel{
+    color: black;
+}
+
+button,  #email{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 30px;
+    box-sizing: border-box;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+#email{
+    border: 1.5px solid rgb(191, 221, 184);
+}
+
+button{
+    border: 0px;
+    background-color:  rgb(191, 221, 184);
+}
+
+#feltetelek{
+    position: relative;
+    top:1px;
+}
+
+#x{
+    position: absolute;
+    right: 10px;
+    top: 10px
+}
+
+#kovetkezo{
+    text-align: left;
+    position: relative;
+    top:15px;
+}
+#qmark{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    position: fixed;
+    right: 5px;
+    bottom: 10px;
+    background-color:  rgb(191, 221, 184);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+@media screen and (max-width:500px) {
+    #card-holder{
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+       h1{
+        font-size: 1.5rem;
+       }
+    }

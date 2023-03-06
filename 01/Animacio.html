@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animáció</title>
+</head>
+<style>
+    div {
+        width: 600px;
+        height: 600px;
+        margin: 0 auto;
+        box-shadow: 0 0 20px grey;
+        text-align: center;
+        position: relative;
+    }
+
+    .to {
+        width: 300px;
+        position: absolute;
+        top: 150px;
+        left: 100px;
+    }
+
+    .kacsa {
+        width: 80px;
+        position: absolute;
+        top: 300px;
+        left: 150px;
+        z-index: 1;
+
+       
+    }
+    .kacsa:hover{
+        animation-duration: 1s;
+        animation-name: uszas;
+    }
+
+    @keyframes uszas {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(30px, 0);
+        }
+
+    }
+    
+</style>
+
+<body>
+    <div>
+        <img class="mezo" src="meadow.svg" alt="mező">
+        <img class="kacsa" src="rubber-duck.svg" alt="kacsa">
+        <img class="to" src="lake.svg" alt="tó">
+</body>
+
+</html>
