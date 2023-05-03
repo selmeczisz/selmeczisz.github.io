@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Fejszámolás</title>
+
+    <style>
+        .container {
+            width: 600px;
+            height: 800px;
+            margin: 0 auto;
+            display: flex;
+
+        }
+
+        .calculator {
+            text-align: center;
+            border: 1px solid gray;
+            width: 300px;
+            height: 350px;
+            box-shadow: 5px 5px 5px rgb(138, 138, 197);
+            box-sizing: border-box;
+
+
+        }
+
+        #szam1,
+        #szam2 {
+            width: 30px;
+            font-size: 2rem;
+            color: blue;
+        }
+
+        button {
+            background: linear-gradient(rgb(220, 126, 135), rgb(165, 164, 221));
+            border: 2px solid black;
+            border-radius: 15px;
+            height: 40px;
+            width: 200px;
+            margin: 10px;
+            color: white;
+            cursor: pointer;
+
+
+        }
+
+        .calcholder {
+            margin: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #eredmeny {
+            width: 50px;
+            height: 25px;
+            border: 2px solid purple;
+            color: gray;
+            font-size: 1.5rem;
+        }
+
+        #timer {
+            margin: 20px;
+            font-size: 2rem;
+            color: #060000;
+            background-color: blue;
+            width: 30px;
+            height: 30px;
+            animation-name: count;
+            animation-duration: 5s;  
+            animation-fill-mode:forwards;
+            
+        }
+        @keyframes count {
+    0%{
+        width: 20px;
+    }
+    100%{
+        width: 260px;
+    }
+}
+   
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <h1>Jó vagy fejszámolásban?</h1>
+            <button class="new" onclick="newNr()">Új számokat kérek</button>
+            <div class="calcholder">
+                <span id="szam1">?</span>
+                <i class="fa-regular fa-square-plus fa-2xl"></i>
+                <span id="szam2">?</span>
+                <i class="fa-solid fa-equals fa-2xl"></i>
+                <input type="text" id="eredmeny" onkeyup="calc()">
+            </div>
+
+            <span id="result"><i class="fa-solid fa-question fa-2xl" style="color: #ef0131;"></i></span>
+
+            <div id="timerContainer"></div>
+        </div>
+
+    </div>
+
+    <script>
+        let nr1;
+        let nr2;
+        let calcResult;
+        let wrong='<i class="fa-solid fa-thumbs-down fa-2xl" style="color: #f41e06;"></i>';
+        let correct='<i class="fa-solid fa-thumbs-up fa-2xl" style="color: #38761e;"></i>';
+        let timeOutId;
+
+        //új számok bekérése
+        function newNr(n1, n2) {
+
+            document.getElementById('eredmeny').value = "";
+            document.getElementById('result').innerHTML = `<i class="fa-solid fa-question fa-2xl" style="color: #ef0131;"></i>`;
+
+
+            nr1 = Math.floor(Math.random() * (100 - 1) + 1);
+            nr2 = Math.floor(Math.random() * (100 - 1) + 1);
+
+            document.getElementById('szam1').innerHTML = nr1;
+            document.getElementById('szam2').innerHTML = nr2;
+            //console.log(nr1, nr2);
+            document.getElementById('eredmeny').disabled = false;
+            document.getElementById('timerContainer').innerHTML='<div id="timer"></div>';
+
+            //számláló beállítása
+            clearTimeout(timeOutId);
+            timeOutId = setTimeout(timer, 5000);
+
+            function timer() { 
+
+                if (calcResult != document.getElementById('eredmeny').value) {
+                    document.getElementById('eredmeny').disabled = true;
+                    document.getElementById('result').innerHTML = wrong;
+                }
+            }
+        }
+
+        //számolás és összehasonlítás
+        function calc(result) {
+
+            calcResult = nr1 + nr2;
+            console.log(calcResult);
+
+            //ha helyes --> zöld ikon megjelenik, animáció paused
+            if (document.getElementById('eredmeny').value == calcResult) {
+                document.getElementById('result').innerHTML = correct;
+                document.getElementById('eredmeny').disabled = true;
+                document.getElementById('timer').style.animationPlayState = 'paused';
+
+            //piros ikon 
+            } else {
+                document.getElementById('result').innerHTML = wrong;
+
+            }
+
+            //console.log(document.getElementById('eredmeny').value);
+        }
+
+        
+
+    </script>
+
+
+</body>
+
+</html>
